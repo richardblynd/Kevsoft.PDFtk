@@ -26,7 +26,11 @@ namespace Kevsoft.PDFtk
 
                 var value = split.Length == 1 ? null : split[1].Substring(1);
 
-                FieldSetMap[key](dataField, value);
+                try
+                {
+                    FieldSetMap[key](dataField, value);
+                }
+                catch { }
             }
 
             return dataField;
